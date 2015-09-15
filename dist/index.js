@@ -23,7 +23,7 @@
     return function(style) {
       SVGCache.init(options);
       return style.eachDecl(/^background|^filter|^content|image$/, function(decl) {
-        var ___, error, matches, name, params, replace, svg;
+        var ___, error, error1, matches, name, params, replace, svg;
         if (!decl.value) {
           return;
         }
@@ -34,8 +34,8 @@
           }
           try {
             svg = SVGCache.get(name);
-          } catch (_error) {
-            error = _error;
+          } catch (error1) {
+            error = error1;
             if (silent) {
               console.info("postcss-svg: " + error);
             } else {
